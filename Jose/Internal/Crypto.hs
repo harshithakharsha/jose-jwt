@@ -144,6 +144,7 @@ rsaVerify a key msg sig = case a of
     RS256 -> go SHA256
     RS384 -> go SHA384
     RS512 -> go SHA512
+    PS256 -> go SHA256
     _     -> False
   where
     go h = PKCS15.verify (Just h) key msg sig

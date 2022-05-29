@@ -133,6 +133,7 @@ canDecodeJws hdr jwk = jwkUse jwk /= Just Enc &&
         (ES256, EcPrivateJwk {})  -> True
         (ES384, EcPrivateJwk {})  -> True
         (ES512, EcPrivateJwk {})  -> True
+        (PS256, RsaPublicJwk {}) -> True
         _                        -> False
 
 canEncodeJws :: JwsAlg -> Jwk -> Bool
